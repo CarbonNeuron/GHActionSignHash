@@ -1,6 +1,7 @@
 const core = require("@actions/core");
 const openpgp = require("openpgp");
 const fs = require("fs");
+const hasha = require('hasha');
 global.fetch = require("node-fetch");
 
 async function run() {
@@ -10,8 +11,8 @@ async function run() {
         core.debug(`text inputted: ${inputText}`);
         try {
             if (fs.existsSync(inputText)) {
-                core.debug("text is a valid filepath, reading the file");
-                var text = fs.readFileSync(inputText);
+                core.debug("text is a valid filepath, hashing it");
+                var text = hasha.fromFileSync(inputText, {algorithm: 'sha256'})
             } else {
                 core.debug("text is not a valid filepath, leaving as a string");
                 var text = inputText;
