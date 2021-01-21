@@ -1,0 +1,35 @@
+name: "SignFile-Action"
+description: "Signs the file with a PGP key"
+author: "CarbonNeuron"
+inputs:
+  path:
+    description: "path of file to sign"
+    required: true
+  keysource:
+    description: "key/keyserver"
+    required: true
+    default: "key"
+  key:
+    description: "string containing PGP key or if keysource is keyserver, a search string (e.g. en email address)"
+    required: true
+  privateKey:
+    description: "string containing a private key used for signing an encryped message. If you only want to sign, use the 'key' field instead"
+    required: false
+  passphrase:
+    description: "Set this if your private key requires a passphrase"
+    required: false
+  keyserver:
+    description: "Custom keyserver address (default is https://keyserver.ubuntu.com)"
+    required: false
+  outputPath:
+    description: "Path to save signature to"
+    required: true
+outputs:
+  encrypted-text:
+    description: "the result of encryption"
+runs:
+  using: "node12"
+  main: index.js
+branding:
+  icon: "lock"
+  color: "blue"

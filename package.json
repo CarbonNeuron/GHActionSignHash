@@ -1,0 +1,32 @@
+{
+    "name": "openpgp-action",
+    "version": "1.0.0",
+    "description": "Github action for encrypting or signing text",
+    "main": "index.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/oplik0/openPGP-action.git"
+    },
+    "keywords": [
+        "github",
+        "action",
+        "github actions",
+        "pgp",
+        "gpg",
+        "openpgp",
+        "openpgpjs",
+        "crypto"
+    ],
+    "author": "oplik0",
+    "license": "LGPL-3.0+",
+    "bugs": {
+        "url": "https://github.com/oplik0/openPGP-action/issues"
+    },
+    "homepage": "https://github.com/oplik0/openPGP-action#readme",
+    "dependencies": {
+        "@actions/core": "^1.2.6",
+        "node-fetch": "^2.6.1",
+        "openpgp": "^4.10.8",
+        "hasha": "^5.2.2"
+    }
+}
