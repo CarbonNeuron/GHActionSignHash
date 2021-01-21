@@ -6,7 +6,7 @@ global.fetch = require("node-fetch");
 async function run() {
     try {
         core.info("started");
-        const inputText = core.getInput("text", { required: true }).toString();
+        const inputText = core.getInput("path", { required: true }).toString();
         core.debug(`text inputted: ${inputText}`);
         try {
             if (fs.existsSync(inputText)) {
@@ -23,7 +23,7 @@ async function run() {
         const keysource = core
             .getInput("keysource", { required: true })
             .toString();
-        const useKeyserver = keysource === "keyserver" ? true : false;
+        const useKeyserver = keysource === "keyserver";
         core.info(`keysource: ${keysource}`);
         const inputKey = core.getInput("key", { required: true }).toString();
         core.debug(`Key inputted: ${inputKey}`);
