@@ -21,9 +21,6 @@ inputs:
   keyserver:
     description: "Custom keyserver address (default is https://keyserver.ubuntu.com)"
     required: false
-  outputPath:
-    description: "Path to save signature to"
-    required: true
 outputs:
   encrypted-text:
     description: "the result of encryption"
